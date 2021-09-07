@@ -9,6 +9,7 @@ import '@testing-library/jest-dom/extend-expect';
 import About from '../../../components/About/index';
 
 
+
 afterEach(cleanup);
 
 describe('About component', () => {
@@ -16,5 +17,13 @@ describe('About component', () => {
     it('renders', () => {
         render(<About />);
       });
-    // Second Test
-  })
+
+
+
+    // Second Test  // "test case", we'll compare snapshot versions of the DOM
+    it('matches snapshot DOM node structure', () => {
+        const { asFragment } = render(<About />);
+        expect(asFragment()).toMatchSnapshot();
+
+
+      })})
