@@ -20,15 +20,14 @@ function Nav() {
     return (
         <header>
             <h2>
-                <a href="/">
+                <a data-testid="link" href="/">
                     <span role="img" aria-label="camera"> 📸</span> Oh Snap!
                 </a>
             </h2>
             <nav>
                 <ul className="flex-row">
                     <li className="mx-2">
-                        <a href="#about">
-                            About me
+                        <a data-testid="about" href="#about">                            About me
                         </a>
                     </li>
                     <li>
@@ -52,7 +51,7 @@ function Nav() {
 
 function categorySelected(name) {
     console.log(`${name} clicked`)
-  }
+}
 
 //   {categories.map((category) => (
 //     <li
@@ -64,5 +63,5 @@ function categorySelected(name) {
 //       </span>
 //     </li>
 //   ))}
-  
+
 export default Nav;
