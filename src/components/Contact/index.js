@@ -20,11 +20,17 @@ function ContactForm() {
     console.log(formState);
 
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(formState);
+      }
+
+
     // JSX 
     return (
         <section>
             <h1>Contact me</h1>
-            <form id="contact-form">
+            <form id="contact-form" onSubmit={handleSubmit}>
 
                 <div>
                     <label className="name">Name:</label>
@@ -44,7 +50,6 @@ function ContactForm() {
             </form>
         </section>
     )
-
 }
 
 export default ContactForm;
