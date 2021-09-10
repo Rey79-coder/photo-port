@@ -1,26 +1,25 @@
-import React from 'react';
+// import React from 'react';
 
 // WE NEED TO USE A USESTARE HOOK
 //  To sync the form data of the user input with the component's state
 import React, { useState } from 'react';
 
-const { name, email, message } = formState;
-
-const [formState, setFormState] = useState(
-    { name: '', email: '', message: '' }
-    
-);
-
-// This function will sync the internal state of the component
-function handleChange(e) {
-    setFormState({...formState, [e.target.name]: e.target.value })
-}
-  
-  console.log(formState);
-
-
 
 function ContactForm() {
+    const [formState, setFormState] = useState
+        ({ name: '', email: '', message: '' });
+
+    const { name, email, message } = formState;
+
+
+    // This function will sync the internal state of the component
+    function handleChange(e) {
+        setFormState({ ...formState, [e.target.name]: e.target.value })
+    }
+
+    console.log(formState);
+
+
     // JSX 
     return (
         <section>
