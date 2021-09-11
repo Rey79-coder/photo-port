@@ -11,15 +11,13 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!errorMessage) {
-      setFormState({ [e.target.name]: e.target.value });
-      console.log('Form', formState);
+      console.log('Submit Form', formState);
     }
   };
 
   const handleChange = (e) => {
     if (e.target.name === 'email') {
       const isValid = validateEmail(e.target.value);
-
       if (!isValid) {
         setErrorMessage('Your email is invalid.');
       } else {
@@ -31,6 +29,10 @@ function ContactForm() {
       } else {
         setErrorMessage('');
       }
+    }
+    if (!errorMessage) {
+      setFormState({ ...formState, [e.target.name]: e.target.value });
+      console.log('Handle Form', formState);
     }
   };
 
