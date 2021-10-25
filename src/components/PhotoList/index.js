@@ -115,14 +115,21 @@ const PhotoList = ({ category }) => {
       {isModalOpen && <Modal onClose={toggleModal} currentPhoto={currentPhoto} />}
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
+<<<<<<< HEAD
           <img
           
             src={require(`../../assets/small/${category}/${i}.jpg`)}
             // src/assets/small/commercial/0.jpg    // ${category}
+=======
+          <img 
+
+            src={require(`../../assets/small/${category}/${i}.jpg`).default}
+>>>>>>> feature/gallery
             alt={image.name}
             className="img-thumbnail mx-1"
             onClick={() => toggleModal(image, i)}
             key={image.name}
+
           />
         ))}
       </div>
